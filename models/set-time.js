@@ -6,26 +6,32 @@ const sequelize = new Sequelize(process.env.PG_URI)
 class SetTime extends Model { }
 
 SetTime.init({
-    setTime_id: {
+    event_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false
+    stage_id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true
     },
-    genre: {
-        type: DataTypes.TEXT,
-        allowNull: false
+    band_id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
     },
-    available_start_time: {
+    start_time: {
         type: DataTypes.DATE,
         allowNull: false
     },
     end_time: {
         type: DataTypes.DATE,
         allowNull: false
+    },
+    set_time_id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
     },
 }, {
     sequelize,

@@ -6,26 +6,18 @@ const sequelize = new Sequelize(process.env.PG_URI)
 class StageEvent extends Model { }
 
 StageEvent.init({
-    stageEvent_id: {
+    stage_event_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false
+    stage_id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true
     },
-    genre: {
-        type: DataTypes.TEXT,
-        allowNull: false
-    },
-    available_start_time: {
-        type: DataTypes.DATE,
-        allowNull: false
-    },
-    end_time: {
-        type: DataTypes.DATE,
-        allowNull: false
+    event_id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true
     },
 }, {
     sequelize,
