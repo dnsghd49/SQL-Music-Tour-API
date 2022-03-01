@@ -3,9 +3,9 @@ const { Sequelize, DataTypes, Model } = require('sequelize')
 const sequelize = new Sequelize(process.env.PG_URI)
 
 // MODEL
-class MeetGreet extends Model { }
+class Meet_greet extends Model { }
 
-MeetGreet.init({
+Meet_greet.init({
     event_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -31,10 +31,10 @@ MeetGreet.init({
     },
 }, {
     sequelize,
-    modelName: 'MeetGreet',
-    tableName: 'MeetGreet',
+    modelName: 'Meet_greet',
+    tableName: 'meet_greet',
     timestamps: false
 })
 
 // EXPORT
-module.exports = MeetGreet
+module.exports = Meet_greet

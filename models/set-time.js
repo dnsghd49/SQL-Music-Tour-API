@@ -3,9 +3,9 @@ const { Sequelize, DataTypes, Model } = require('sequelize')
 const sequelize = new Sequelize(process.env.PG_URI)
 
 // MODEL
-class SetTime extends Model { }
+class Set_time extends Model { }
 
-SetTime.init({
+Set_time.init({
     event_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -35,10 +35,10 @@ SetTime.init({
     },
 }, {
     sequelize,
-    modelName: 'SetTime',
-    tableName: 'SetTime',
+    modelName: 'Set_time',
+    tableName: 'set_time',
     timestamps: false
 })
 
 // EXPORT
-module.exports = SetTime
+module.exports = Set_time

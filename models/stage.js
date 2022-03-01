@@ -18,7 +18,7 @@ Stage.init({
 }, {
     sequelize,
     modelName: 'Stage',
-    tableName: 'Stage',
+    tableName: 'stage',
     timestamps: false
 })
 
