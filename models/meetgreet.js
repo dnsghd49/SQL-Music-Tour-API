@@ -3,18 +3,21 @@ const { Sequelize, DataTypes, Model } = require('sequelize')
 const sequelize = new Sequelize(process.env.PG_URI)
 
 // MODEL
-class Meet_greet extends Model { }
+class MeetGreet extends Model { }
 
-Meet_greet.init({
-    event_id: {
+MeetGreet.init({
+    meet_greet_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
+    event_id: {
+        type: DataTypes.SMALLINT,
+        allowNull: false
+    },
     band_id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
+        type: DataTypes.SMALLINT,
+        allowNull: false
     },
     meet_start_time: {
         type: DataTypes.DATE,
@@ -23,18 +26,13 @@ Meet_greet.init({
     meet_end_time: {
         type: DataTypes.DATE,
         allowNull: false
-    },
-    meet_greet_id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
+    }
 }, {
     sequelize,
-    modelName: 'Meet_greet',
-    tableName: 'meet_greet',
+    modelName: 'MeetGreet',
+    tableName: 'meet_greets',
     timestamps: false
 })
 
 // EXPORT
-module.exports = Meet_greet
+module.exports = MeetGreet

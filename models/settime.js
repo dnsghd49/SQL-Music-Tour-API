@@ -3,22 +3,25 @@ const { Sequelize, DataTypes, Model } = require('sequelize')
 const sequelize = new Sequelize(process.env.PG_URI)
 
 // MODEL
-class Set_time extends Model { }
+class SetTime extends Model { }
 
-Set_time.init({
-    event_id: {
+SetTime.init({
+    set_time_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
+    },
+    event_id: {
+        type: DataTypes.SMALLINT,
+        allowNull: false
     },
     stage_id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true
+        type: DataTypes.SMALLINT,
+        allowNull: false
     },
     band_id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
+        type: DataTypes.SMALLINT,
+        allowNull: false
     },
     start_time: {
         type: DataTypes.DATE,
@@ -28,17 +31,12 @@ Set_time.init({
         type: DataTypes.DATE,
         allowNull: false
     },
-    set_time_id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
 }, {
     sequelize,
-    modelName: 'Set_time',
-    tableName: 'set_time',
+    modelName: 'SetTime',
+    tableName: 'set_times',
     timestamps: false
 })
 
 // EXPORT
-module.exports = Set_time
+module.exports = SetTime

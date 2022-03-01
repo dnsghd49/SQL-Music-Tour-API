@@ -14,11 +14,11 @@ Stage.init({
     stage_name: {
         type: DataTypes.STRING,
         allowNull: false
-    },
+    }
 }, {
     sequelize,
     modelName: 'Stage',
-    tableName: 'stage',
+    tableName: 'stages',
     timestamps: false
 })
 

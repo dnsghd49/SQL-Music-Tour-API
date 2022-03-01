@@ -26,11 +26,11 @@ Event.init({
     end_time: {
         type: DataTypes.DATE,
         allowNull: false
-    },
+    }
 }, {
     sequelize,
     modelName: 'Event',
-    tableName: 'event',
+    tableName: 'events',
     timestamps: false
 })
 
