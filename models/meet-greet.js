@@ -6,26 +6,28 @@ const sequelize = new Sequelize(process.env.PG_URI)
 class MeetGreet extends Model { }
 
 MeetGreet.init({
-    meetGreet_id: {
+    event_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false
+    band_id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
     },
-    genre: {
-        type: DataTypes.TEXT,
-        allowNull: false
-    },
-    available_start_time: {
+    meet_start_time: {
         type: DataTypes.DATE,
         allowNull: false
     },
-    end_time: {
+    meet_end_time: {
         type: DataTypes.DATE,
         allowNull: false
+    },
+    meet_greet_id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
     },
 }, {
     sequelize,
