@@ -1,6 +1,7 @@
 'use strict'
-const { Model } = require('sequelize')
-
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class SetTime extends Model {
     /**
@@ -30,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   SetTime.init({
     set_time_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER, 
       primaryKey: true,
       autoIncrement: true
     },

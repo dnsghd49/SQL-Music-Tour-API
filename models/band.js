@@ -1,6 +1,7 @@
 'use strict'
-const { Model } = require('sequelize')
-
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Band extends Model {
     /**
@@ -18,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       // set times 
       Band.hasMany(SetTime, {
         foreignKey: "band_id",
-        set_times: "set_times"
+        as: "set_times"
       })
     }
   }
@@ -29,20 +30,20 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true
     },
     name: {
-      type: DataTypes.STRING,
-      allowNull: false
+        type: DataTypes.STRING,
+        allowNull: false
     },
     genre: {
-      type: DataTypes.TEXT,
-      allowNull: false
+        type: DataTypes.TEXT,
+        allowNull: false
     },
     available_start_time: {
-      type: DataTypes.DATE,
-      allowNull: false
+        type: DataTypes.DATE,
+        allowNull: false
     },
     end_time: {
-      type: DataTypes.DATE,
-      allowNull: false
+        type: DataTypes.DATE,
+        allowNull: false
     }
   }, {
     sequelize,
